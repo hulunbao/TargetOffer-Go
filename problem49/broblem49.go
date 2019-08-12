@@ -15,21 +15,22 @@ func MyAtoi(str string) int {
 		return res
 	}
 	// 前面有空格的情况
-	for str[index] == ' ' {
+	for index < len(str) && str[index] == ' ' {
 		index++
 	}
 
 	// + -的情况
-	if str[index] == '+' {
+	if index < len(str) && str[index] == '+' {
 		index++
-	} else if str[index] == '-' {
+	} else if index < len(str) && str[index] == '-' {
 		index++
 		flag = -1
 	}
 
 	// 处理字符串
-	for index < len(str) && str[index] <= '9' && str[index] >= 0 {
+	for index < len(str) && str[index] <= '9' && str[index] >= '0' {
 		if str[index] == '0' {
+			res = 10*res + int(str[index]-'0')
 			index++
 		} else {
 			res = 10*res + int(str[index]-'0')

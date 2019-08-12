@@ -63,6 +63,22 @@ func TestMyAtoi(t *testing.T) {
 			p: para{"-9223372036854775808"},
 			a: ans{0},
 		},
+		question{
+			p: para{"010"},
+			a: ans{10},
+		},
+		question{
+			p: para{"42 hello world"},
+			a: ans{42},
+		},
+		question{
+			p: para{""},
+			a: ans{0},
+		},
+		question{
+			p: para{" "},
+			a: ans{0},
+		},
 	}
 	for _, q := range qs {
 		if MyAtoi(q.p.str) != q.a.res {
