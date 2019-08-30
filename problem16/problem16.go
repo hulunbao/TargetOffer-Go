@@ -58,17 +58,17 @@ func main() {
 	l1 := &NodeList{1, l2}
 	fmt.Println("1 -> 2 -> 3")
 	print(ReverseList1(l1))
-	fmt.Println("\n")
+	fmt.Printf("\n")
 
 	l2 = &NodeList{2, nil}
 	l1 = &NodeList{1, l2}
 	fmt.Println("1 -> 2 ->")
 	print(ReverseList1(l1))
-	fmt.Println("\n")
+	fmt.Printf("\n")
 
 	l1 = &NodeList{1, nil}
 	fmt.Println("1 -> ")
 	print(ReverseList1(l1))
-	fmt.Println("\n")
+	fmt.Printf("\n")
 
 }
