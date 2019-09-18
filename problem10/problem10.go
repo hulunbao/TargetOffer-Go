@@ -1,11 +1,11 @@
 package problem10
 
-// NumberOf1　统计1的个数
+// NumberOf1 统计1的个数
 func NumberOf1(n int) int {
 	count := 0
 	flag := 1
-	for flag > 0 {
-		if flag&n == flag {
+	for flag != 0 {
+		if flag&n != 0 {
 			count++
 		}
 		flag = flag << 1
