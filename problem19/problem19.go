@@ -19,6 +19,7 @@ func MirrorOfBinaryTree(root *TreeNode) {
 	MirrorOfBinaryTree(root.Right)
 }
 
+// Print 前序遍历二叉树
 func Print(root *TreeNode) {
 	if root == nil {
 		return
