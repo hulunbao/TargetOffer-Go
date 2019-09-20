@@ -1,4 +1,4 @@
-package main
+package problem16
 
 import "fmt"
 
@@ -31,7 +31,7 @@ func ReverseList1(head *NodeList) *NodeList {
 
 	p1 := head
 	p2 := head.Next
-	p3 := &NodeList{}
+	var p3 *NodeList
 
 	for p2 != nil {
 		p3 = p2.Next
@@ -44,31 +44,26 @@ func ReverseList1(head *NodeList) *NodeList {
 	return p1
 }
 
+// ReverseList2 反转链表
+func ReverseList2(head *NodeList) *NodeList {
+	var reverseHead *NodeList
+	node := head
+	var prev *NodeList
+	for node != nil {
+		next := node.Next
+		if next == nil {
+			reverseHead = node
+		}
+		node.Next = prev
+		prev = node
+		node = next
+	}
+	return reverseHead
+}
+
 func print(head *NodeList) {
 	for head != nil {
 		fmt.Printf("%d -> ", head.Val)
 		head = head.Next
 	}
-}
-
-func main() {
-	//test
-	l3 := &NodeList{3, nil}
-	l2 := &NodeList{2, l3}
-	l1 := &NodeList{1, l2}
-	fmt.Println("1 -> 2 -> 3")
-	print(ReverseList1(l1))
-	fmt.Printf("\n")
-
-	l2 = &NodeList{2, nil}
-	l1 = &NodeList{1, l2}
-	fmt.Println("1 -> 2 ->")
-	print(ReverseList1(l1))
-	fmt.Printf("\n")
-
-	l1 = &NodeList{1, nil}
-	fmt.Println("1 -> ")
-	print(ReverseList1(l1))
-	fmt.Printf("\n")
-
 }
