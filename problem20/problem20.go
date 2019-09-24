@@ -23,15 +23,15 @@ func PrintMatrixClockwisely(matrix [][]int) []int {
 			res = append(res, matrix[startRow][i])
 			count--
 		}
-		for i := startRow + 1; i <= endCol && count > 0; i++ {
+		for i := startRow + 1; i <= endRwo && count > 0; i++ {
 			res = append(res, matrix[i][endCol])
 			count--
 		}
-		for i := endRwo - 1; i >= startRow && count > 0; i-- {
+		for i := endCol - 1; i >= startCol && count > 0; i-- {
 			res = append(res, matrix[endRwo][i])
 			count--
 		}
-		for i := endCol - 1; i > startCol && count > 0; i-- {
+		for i := endRwo - 1; i > startRow && count > 0; i-- {
 			res = append(res, matrix[i][startCol])
 			count--
 		}

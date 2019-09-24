@@ -21,4 +21,22 @@ func TestPrintMatrixClockwisely(t *testing.T) {
 		{15, 14, 13, 12, 11},
 	}
 	fmt.Println(PrintMatrixClockwisely(matrix))
+
+	matrix = [][]int{
+		{1, 4, 5, 7, 7},
+	}
+	fmt.Println(PrintMatrixClockwisely(matrix))
+
+	matrix = [][]int{
+		{1},
+		{2},
+		{3},
+		{4},
+	}
+	fmt.Println(PrintMatrixClockwisely(matrix))
+
+	matrix = [][]int{
+		{1},
+	}
+	fmt.Println(PrintMatrixClockwisely(matrix))
 }
